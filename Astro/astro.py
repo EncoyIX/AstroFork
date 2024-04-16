@@ -17,10 +17,6 @@ class Screenshare(object):
         self.drive_letter = os.getcwd().split('\\', 1)[0]+'/'
         self.winUsername = os.getlogin()
 
-    #Finds minecraft process and gets info
-    def mcProcess(self):
-        mcprocess_info = {}
-
         #Get processes with the name "javaw"
         process = [p for p in psutil.process_iter(attrs=['pid', 'name']) if 'javaw' in p.info['name']]
         if process:
